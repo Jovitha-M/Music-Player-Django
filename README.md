@@ -17,22 +17,29 @@ Music Studio is a web application designed to provide music enthusiasts with a s
 
    ```bash
    git clone https://github.com/your-username/music-studio.git
-Navigate to the project directory:
 
 2. Navigate to the project directory
-cd music-studio
+
+   ```bash
+   cd music-studio
 
 
-3. Install dependencies:
-pip install -r requirements.txt
+4. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
 
 
 3. Set up the database:
-python manage.py migrate
+
+   ```bash
+   python manage.py migrate
 
 
-4. Run the development server:
-python manage.py runserver
+5. Run the development server:
+
+   ```bash
+   python manage.py runserver
 
 
-5. Access the application in your web browser at http://localhost:8000.
+7. Access the application in your web browser at http://localhost:8000.
