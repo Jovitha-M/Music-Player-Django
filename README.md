@@ -7,9 +7,9 @@ Music Studio is a web application designed to provide music enthusiasts with a s
 - **User Authentication**: Secure user registration and login system.
 - **Music Library**: Extensive collection of songs across various genres.
 - **Playlist Management**: Create, edit, and delete playlists according to user preferences.
-- **Recommendation Engine**: Personalized music recommendations based on user listening history.
-- **Social Interaction**: Follow other users, share playlists, and engage with the community.
+- **Search Engine**: Search for your music in the list of music library.
 - **Responsive Design**: Optimized for various devices and screen sizes.
+- **Watch Later**: Add the music that you wanted in watch later list and hear it later.
 
 ## Installation
 
