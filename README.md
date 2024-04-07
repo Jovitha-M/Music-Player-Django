@@ -1,6 +1,6 @@
 # Music Studio
 
-Music Studio is a web application designed to provide music enthusiasts with a seamless and immersive music streaming experience. It allows users to explore a vast library of songs, create playlists, discover new music, and interact with other users.
+Music Studio is a web application designed to provide music enthusiasts with a seamless and immersive music streaming experience. It allows users to explore a vast library of songs, add music to watch later list and discover new music
 
 ## Features
 
