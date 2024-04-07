@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home Page</title>
+  </head>
+
+  <body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="{% url 'Home' %}"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            class="h-8"
+            alt="Flowbite Logo"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Music Studio</span
+          >
+        </a>
+        <form method="get" action="#">
+          <div class="flex">
+            <input
+              type="text"
+              name="query"
+              id="search-navbar"
+              class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search..."
+            />
+            <button
+              type="submit"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="{% url 'Home' %}"
+                class="self-center text-lg font-semibold whitespace-nowrap md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'watchlater' %}"
+                class="self-center text-lg font-semibold whitespace-nowrap md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page"
+                >Watch Later</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="self-center text-lg font-semibold whitespace-nowrap md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+              <a
+                href="{% url 'Logout' %}"
+                class="self-center text-lg font-semibold whitespace-nowrap md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Logout</a
+              >
+            </li>
+            {% else %}
+            <li>
+              <a
+                href="{% url 'Login' %}"
+                class="self-center text-lg font-semibold whitespace-nowrap md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Login</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-cta"
+          ></div>
+        </div>
+      </div>
+    </nav>
+    <div class="text-center p-10">
+      <h1 class="font-bold text-4xl mb-4">Music Studio Player</h1>
+      <h1 class="text-3xl">You are the music while the music lasts.</h1>
+    </div>
+    <section
+      id="Projects"
+      class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
+    >
+      {% for song in songs %}
+      <div
+        class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+      >
+        <img
+          src="{{song.image_url}}"
+          alt="Product"
+          class="h-80 w-72 object-cover rounded-t-xl"
+        />
+        <div class="px-4 py-3 w-72">
+          <span class="text-gray-400 mr-3 uppercase text-xs"
+            >{{song.movie}}</span
+          >
+          <p class="text-lg font-bold text-black truncate block capitalize">
+            {{song.title}} - {{song.artist}}
+          </p>
+          <div class="flex items-center">
+            <audio id="audioElement{{ song.id }}" controls class="mb-2">
+              <source src="{{song.song_file}}" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            {% if song not in watch_later %}
+            <form action="#" method="post">
+              {% csrf_token %}
+              <div class="ml-auto">
+                <button>
+                  <img
+                    src="https://static.thenounproject.com/png/4970870-200.png"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+    <div class="text-center py-10 px-10">
+      <h2 class="font-bold text-2xl md:text-4xl mb-4">
+        Enjoy Listening to you favourite music !
+      </h2>
+    </div>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+      const songCards = Array.from(document.getElementsByTagName("songcard")); // Select all song cards
+      let index = 0;
+      songCards.forEach((songCard) => {
+        index++;
+        const songCardId = index;
+        const playButton = songCard.querySelector(".playButton" + index); // Select play button within card
+        const audioElement = document.getElementById(
+          `audioElement${songCardId}`
+        );
+
+        playButton.addEventListener("click", () => {
+          const currentAudioElement = document.querySelector(
+            "audio[controls]:not([paused])"
+          ); // Get currently playing audio (if any)
+
+          if (currentAudioElement && currentAudioElement !== audioElement) {
+            currentAudioElement.pause();
+          }
+
+          if (audioElement.paused) {
+            audioElement.play();
+          } else {
+            audioElement.pause();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

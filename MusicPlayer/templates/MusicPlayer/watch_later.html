@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Watch Later Page</title>
+  </head>
+
+  <body>
+    <!-- Navigation bar -->
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            class="h-8"
+            alt="Flowbite Logo"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Music Studio</span
+          >
+        </a>
+        <div class="flex">
+          <input
+            type="text"
+            id="search-navbar"
+            class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search..."
+          />
+          <button
+            type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Search
+          </button>
+        </div>
+
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="{% url 'Home' %}"
+                class="self-center text-lg font-semibold whitespace-nowrap md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'About' %}"
+                class="self-center text-lg font-semibold whitespace-nowrap md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+          </ul>
+          <div class="md:p-4"></div>
+          <button
+            type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Logout
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-cta"
+        ></div>
+      </div>
+    </nav>
+
+    <!-- title -->
+    <div class="text-center p-10">
+      <h1 class="font-bold text-4xl mb-4">Watch Later List</h1>
+    </div>
+
+    <!-- ✅ Grid Section - Starts Here 👇 -->
+    <section
+      id="Projects"
+      class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5"
+    >
+      <!--   🛑 Product card 2- Ends Here  -->
+
+      <!--   ✅ Product card 3 - Starts Here 👇 -->
+      <div
+        class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+      >
+        <a href="#">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ea0dc804-b617-4f55-b6e9-df92848c80ae/decfach-783e8197-2d17-487f-8cef-77a4dfb4f05a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VhMGRjODA0LWI2MTctNGY1NS1iNmU5LWRmOTI4NDhjODBhZVwvZGVjZmFjaC03ODNlODE5Ny0yZDE3LTQ4N2YtOGNlZi03N2E0ZGZiNGYwNWEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LAqOM97J9MgbCnicrSAXuDq-rAWwnMoAeAAYYLb2W9U"
+            alt="Product"
+            class="h-80 w-72 object-cover rounded-t-xl"
+          />
+          <div class="px-4 py-3 w-72">
+            <span class="text-gray-400 mr-3 uppercase text-xs"
+              >Attack on Titan</span
+            >
+            <p class="text-lg font-bold text-black truncate block capitalize">
+              The Rumbling - SiM
+            </p>
+            <div class="flex items-center">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Play
+              </button>
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Download
+              </button>
+              <div class="ml-auto">
+                <a href="#"
+                  ><img
+                    src="https://static.thenounproject.com/png/4970870-200.png"
+                    width="20"
+                    height="20"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!--   🛑 Product card 3 - Ends Here  -->
+    </section>
+
+    <!-- 🛑 Grid Section - Ends Here -->
+
+    <!-- credit -->
+    <div class="text-center py-10 px-10">
+      <h2 class="font-bold text-2xl md:text-4xl mb-4">
+        Enjoy Listening to you favourite music !
+      </h2>
+    </div>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+  </body>
+</html>

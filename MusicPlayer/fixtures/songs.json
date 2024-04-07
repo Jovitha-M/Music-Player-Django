@@ -1,0 +1,35 @@
+[
+  {
+    "model": "MusicPlayer.song",
+    "pk": 1,
+    "fields": {
+      "movie": "Demon Slayer",
+      "title": "Kamado Tanjiro no uta",
+      "artist": "Go Shiina",
+      "song_file": "music/kamadotanjiro_no_uta.mp3",
+      "image_url": "https://i.scdn.co/image/ab67616d0000b273b411c835ed8b93bf2f623d03"
+    }
+  },
+  {
+    "model": "MusicPlayer.song",
+    "pk": 2,
+    "fields": {
+      "movie": "Black Clover",
+      "title": "Black Catcher",
+      "artist": "Alan Silvestri",
+      "song_file": "music/black_catcher.mp3",
+      "image_url": "https://i.scdn.co/image/ab67616d0000b2732c79651c5f5dfe3c45bf0a2b"
+    }
+  },
+  {
+    "model": "MusicPlayer.song",
+    "pk": 3,
+    "fields": {
+      "movie": "Attack on Titan",
+      "title": "The Rumbling",
+      "artist": "SiM",
+      "song_file": "music/attack_on_titan_s4_pt2",
+      "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ea0dc804-b617-4f55-b6e9-df92848c80ae/decfach-783e8197-2d17-487f-8cef-77a4dfb4f05a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VhMGRjODA0LWI2MTctNGY1NS1iNmU5LWRmOTI4NDhjODBhZVwvZGVjZmFjaC03ODNlODE5Ny0yZDE3LTQ4N2YtOGNlZi03N2E0ZGZiNGYwNWEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.LAqOM97J9MgbCnicrSAXuDq-rAWwnMoAeAAYYLb2W9U"
+    }
+  }
+]
